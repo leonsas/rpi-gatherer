@@ -30,7 +30,8 @@ def read_temp():
     return temp_c, temp_f
 
 def init_client():
-    with open('tempodb_keys','r') as f:
+    fname = os.path.abspath(os.path.join(os.path.realpath(__file__), os.pardir)) + "/tempodb_keys"
+    with open(fname,'r') as f:
         api_key = f.readline().strip()
         api_secret = f.readline().strip()
 
